@@ -7,7 +7,7 @@ from core.user.serializers import UserSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     http_method_names = ("patch", "get")
-    permission_classes = (AllowAny, )
+    permission_classes = (IsAuthenticated, )
     serializer_class = UserSerializer
 
     def get_queryset(self):
